@@ -5,7 +5,6 @@ import store from './store'
 import firedux from './store/firedux'
 import * as Actions from './actions'
 import App from './containers/App'
-// import 'todomvc-app-css/index.css'
 
 firedux.watch('Developer').then(() => {
   store.dispatch(Actions.getDeveloper())
