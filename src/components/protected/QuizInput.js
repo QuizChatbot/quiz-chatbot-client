@@ -80,6 +80,10 @@ class QuizInput extends Component {
             autoFocus={autoFocus || this.state.isEditing[form]}
             onChange={this.handleChange}
             onBlur={() => this.handleBlur(form)}
+            style={{
+              maxWidth: '260px',
+              width: '100%'
+            }}
           />
         </div>
       )
