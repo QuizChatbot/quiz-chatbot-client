@@ -42,7 +42,7 @@ class QuizInput extends Component {
     this.setState({ [e.target.name]: e.target.value })
   }
 
-  handleDoubleClick = form => {
+  handleClick = form => {
     this.setState({ isEditing: { [form]: true } })
   }
 
@@ -76,7 +76,6 @@ class QuizInput extends Component {
             type='text'
             name={form}
             floatingLabelText={getFloatingLabelText(form)}
-            // defaultValue={this.state[form]}
             value={this.state[form]}
             autoFocus={autoFocus || this.state.isEditing[form]}
             onChange={this.handleChange}
@@ -91,7 +90,7 @@ class QuizInput extends Component {
         >
           <FlatButton
             label={this.state[form]}
-            onTouchTap={() => this.handleDoubleClick(form)}
+            onTouchTap={() => this.handleClick(form)}
             style={{
               maxWidth: '260px',
               width: '100%',
@@ -112,7 +111,7 @@ class QuizInput extends Component {
           <dd
             className='from'
             style={{ paddingRight: '5%' }}
-            onClick={() => this.handleDoubleClick(form)}
+            onClick={() => this.handleClick(form)}
           >
             <p style={{ margin: '0px', maxWidth: '260px' }}>
               <b>{getFloatingLabelText(form)}:</b> {this.state[form]}
@@ -133,7 +132,7 @@ class QuizInput extends Component {
               width: '100%'
             }}
           >
-            <label onClick={() => this.handleDoubleClick(form)}>
+            <label onClick={() => this.handleClick(form)}>
               <b>{getFloatingLabelText(form)}:</b>{this.state[form]}
             </label>
           </div>
