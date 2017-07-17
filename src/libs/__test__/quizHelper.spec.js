@@ -2,7 +2,8 @@ import React from 'react'
 import {
   getBlankQuest,
   getQuestFromProps,
-  getQuizStatefromQuest
+  getQuizStatefromQuest,
+  getFloatingLabelText
 } from '../quizHelper'
 
 describe('quizHelper', () => {
@@ -38,5 +39,15 @@ describe('quizHelper', () => {
       choice_2: 'c2'
     }
     expect(getQuizStatefromQuest(quest)).toMatchSnapshot()
+  })
+
+  it('getFloatingLabelText should return floating label text', () => {
+    expect(getFloatingLabelText('subject')).toMatchSnapshot()
+    expect(getFloatingLabelText('category')).toMatchSnapshot()
+    expect(getFloatingLabelText('question')).toMatchSnapshot()
+    expect(getFloatingLabelText('choice_0')).toMatchSnapshot()
+    expect(getFloatingLabelText('choice_1')).toMatchSnapshot()
+    expect(getFloatingLabelText('choice_2')).toMatchSnapshot()
+    expect(getFloatingLabelText('')).toMatchSnapshot()
   })
 })

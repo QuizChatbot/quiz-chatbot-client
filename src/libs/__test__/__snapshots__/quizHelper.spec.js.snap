@@ -12,6 +12,20 @@ Object {
 }
 `;
 
+exports[`quizHelper getFloatingLabelText should return floating label text 1`] = `"Subject"`;
+
+exports[`quizHelper getFloatingLabelText should return floating label text 2`] = `"Category"`;
+
+exports[`quizHelper getFloatingLabelText should return floating label text 3`] = `"Question"`;
+
+exports[`quizHelper getFloatingLabelText should return floating label text 4`] = `"Choice 1 (correct answer)"`;
+
+exports[`quizHelper getFloatingLabelText should return floating label text 5`] = `"Choice 2"`;
+
+exports[`quizHelper getFloatingLabelText should return floating label text 6`] = `"Choice 3"`;
+
+exports[`quizHelper getFloatingLabelText should return floating label text 7`] = `""`;
+
 exports[`quizHelper getQuestFromProps should return blank if quest is undefined 1`] = `Object {}`;
 
 exports[`quizHelper getQuestFromProps should return new object 1`] = `
