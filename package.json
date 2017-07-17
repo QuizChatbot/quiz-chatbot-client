@@ -23,7 +23,8 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "jest --watchAll",
+    "test": "react-scripts test",
+    "test-jest": "jest --watchAll",
     "eject": "react-scripts eject"
   },
   "devDependencies": {
