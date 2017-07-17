@@ -1,8 +1,11 @@
 import React from 'react'
-import { getBlankQuest, getQuestFromProps, getQuizStatefromQuest } from '../quizHelper'
+import {
+  getBlankQuest,
+  getQuestFromProps,
+  getQuizStatefromQuest
+} from '../quizHelper'
 
 describe('quizHelper', () => {
-
   it('getBlankQuest should return blank', () => {
     expect(getBlankQuest()).toMatchSnapshot()
   })
@@ -15,6 +18,7 @@ describe('quizHelper', () => {
     const quest = {
       subject: 'subject',
       question: 'question',
+      category: 'category',
       choices: ['c0', 'c1', 'c2']
     }
     expect(getQuestFromProps(quest)).toMatchSnapshot()
@@ -27,10 +31,11 @@ describe('quizHelper', () => {
   it('getQuizStatefromQuest should return state with data', () => {
     const quest = {
       subject: 'subject',
+      category: 'category',
       question: 'question',
       choice_0: 'c0',
       choice_1: 'c1',
-      choice_2: 'c2',
+      choice_2: 'c2'
     }
     expect(getQuizStatefromQuest(quest)).toMatchSnapshot()
   })
