@@ -10,6 +10,9 @@ import RaisedButton from 'material-ui/RaisedButton'
 import FlatButton from 'material-ui/FlatButton'
 import TextField from 'material-ui/TextField'
 import Snackbar from 'material-ui/Snackbar'
+import { RadioButton, RadioButtonGroup } from 'material-ui/RadioButton'
+import ActionFavorite from 'material-ui/svg-icons/action/favorite'
+import ActionFavoriteBorder from 'material-ui/svg-icons/action/favorite-border'
 import './bubble.css'
 
 class QuizInput extends Component {
@@ -65,28 +68,82 @@ class QuizInput extends Component {
     })
   }
 
+  handleTouchTapCategory = category => {
+    const { newQuiz, onSave } = this.props
+    if (newQuiz) {
+      this.setState({
+        category: category
+      })
+    }
+    // else {
+    //   onSave(quiz, category)
+    //   this.setState({ isEditing: { category: false } })
+    // }
+  }
+
   renderForm (form, autoFocus) {
     const { newQuiz } = this.props
 
+    // Input form
     if (this.state.isEditing[form] || newQuiz) {
-      return (
-        <div style={{ textAlign: 'center' }}>
-          <TextField
-            ref={form}
-            type='text'
-            name={form}
-            floatingLabelText={getFloatingLabelText(form)}
-            value={this.state[form]}
-            autoFocus={autoFocus || this.state.isEditing[form]}
-            onChange={this.handleChange}
-            onBlur={() => this.handleBlur(form)}
-            style={{
-              maxWidth: '260px',
-              width: '100%'
-            }}
-          />
-        </div>
-      )
+      // Category
+      if (form.indexOf('category') > -1) {
+        return (
+          <div style={{ textAlign: 'center' }}>
+            <div
+              style={{
+                textAlign: 'left',
+                maxWidth: '260px',
+                width: '100%',
+                margin: 'auto'
+              }}
+            >
+              <RadioButtonGroup
+                name='shipSpeed'
+                defaultSelected='12 factors app'
+                onChange={(e, selection) =>
+                  this.handleTouchTapCategory(selection)}
+              >
+                <RadioButton
+                  value='12 factors app'
+                  label='12 factors app'
+                  checkedIcon={<ActionFavorite style={{ color: '#F44336' }} />}
+                  uncheckedIcon={<ActionFavoriteBorder />}
+                  style={{ marginTop: '5px', marginBottom: '5px' }}
+                />
+                <RadioButton
+                  value='design patterns'
+                  label='design patterns'
+                  checkedIcon={<ActionFavorite style={{ color: '#F44336' }} />}
+                  uncheckedIcon={<ActionFavoriteBorder />}
+                  style={{ marginTop: '5px', marginBottom: '5px' }}
+                />
+              </RadioButtonGroup>
+            </div>
+          </div>
+        )
+        // Others
+      } else {
+        return (
+          <div style={{ textAlign: 'center' }}>
+            <TextField
+              ref={form}
+              type='text'
+              name={form}
+              floatingLabelText={getFloatingLabelText(form)}
+              value={this.state[form]}
+              autoFocus={autoFocus || this.state.isEditing[form]}
+              onChange={this.handleChange}
+              onBlur={() => this.handleBlur(form)}
+              style={{
+                maxWidth: '260px',
+                width: '100%'
+              }}
+            />
+          </div>
+        )
+      }
+      // Render choice
     } else if (form.indexOf('choice') > -1) {
       return (
         <div
@@ -109,6 +166,7 @@ class QuizInput extends Component {
           />
         </div>
       )
+      // Render question
     } else if (form.indexOf('question') > -1) {
       return (
         <dl className='ios7'>
@@ -123,6 +181,7 @@ class QuizInput extends Component {
           </dd>
         </dl>
       )
+      // Render normal text
     } else {
       return (
         <div
@@ -137,7 +196,7 @@ class QuizInput extends Component {
             }}
           >
             <label onClick={() => this.handleClick(form)}>
-              <b>{getFloatingLabelText(form)}:</b>{this.state[form]}
+              <b>{getFloatingLabelText(form)}: </b>{this.state[form]}
             </label>
           </div>
         </div>
@@ -173,8 +232,19 @@ class QuizInput extends Component {
     return (
       <div style={{ padding: '10px' }}>
         {idx && <h4 style={{ margin: '0px' }}>#{idx}</h4>}
-        {this.renderForm('subject', autoFocus)}
+        {newQuiz &&
+          <div
+            style={{
+              textAlign: 'left',
+              maxWidth: '260px',
+              width: '100%',
+              margin: 'auto'
+            }}
+          >
+            Choose category: <br />
+          </div>}
         {this.renderForm('category')}
+        {this.renderForm('subject', autoFocus)}
         {this.renderForm('question')}
         {this.renderForm('choice_0')}
         {this.renderForm('choice_1')}
