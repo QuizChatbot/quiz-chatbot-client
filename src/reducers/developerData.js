@@ -7,7 +7,7 @@ const developerData = (state, action) => {
       }
     default:
       return {
-        developers: state.developers ? state.developers : []
+        developers: state.developers || []
       }
   }
 }
