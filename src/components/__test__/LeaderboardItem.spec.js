@@ -2,7 +2,7 @@ import React from 'react'
 import { shallow, mount, render } from 'enzyme'
 import LeaderboardItem from '../LeaderboardItem'
 
-describe('LeaderboardItem component test', () => {
+describe('LeaderboardItem component', () => {
   const props = {
     idx: 0,
     developer: {
