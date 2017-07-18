@@ -70,15 +70,15 @@ class QuizInput extends Component {
 
   handleTouchTapCategory = category => {
     const { newQuiz, onSave } = this.props
-    if (newQuiz) {
-      this.setState({
-        category: category
-      })
+    this.setState({
+      category: category
+    })
+    if (!newQuiz) {
+      const quiz = { category: category }
+      const isChoice = false
+      onSave(quiz, isChoice)
+      this.setState({ isEditing: { category: false } })
     }
-    // else {
-    //   onSave(quiz, category)
-    //   this.setState({ isEditing: { category: false } })
-    // }
   }
 
   renderForm (form, autoFocus) {
@@ -100,7 +100,7 @@ class QuizInput extends Component {
             >
               <RadioButtonGroup
                 name='shipSpeed'
-                defaultSelected='12 factors app'
+                defaultSelected={this.state.category}
                 onChange={(e, selection) =>
                   this.handleTouchTapCategory(selection)}
               >
