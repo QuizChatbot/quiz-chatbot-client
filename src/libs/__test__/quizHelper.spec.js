@@ -8,7 +8,7 @@ import {
 
 describe('quizHelper', () => {
   it('getBlankQuest should return blank', () => {
-    expect(getBlankQuest()).toMatchSnapshot()
+    expect(getBlankQuest('design patterns')).toMatchSnapshot()
   })
 
   it('getQuestFromProps should return blank if quest is undefined', () => {

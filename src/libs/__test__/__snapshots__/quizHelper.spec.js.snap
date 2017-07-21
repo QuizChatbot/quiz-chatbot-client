@@ -2,7 +2,7 @@
 
 exports[`quizHelper getBlankQuest should return blank 1`] = `
 Object {
-  "category": "",
+  "category": "design patterns",
   "choice_0": "",
   "choice_1": "",
   "choice_2": "",
