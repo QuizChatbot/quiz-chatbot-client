@@ -35,9 +35,8 @@ class QuizInput extends Component {
       choice_2
     } = this.state
     onSave({ subject, category, question, choice_0, choice_1, choice_2 })
-
     if (newQuiz) {
-      this.setState(getBlankQuest())
+      this.setState(getBlankQuest(this.state.category))
     }
   }
 

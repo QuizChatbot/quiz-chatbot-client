@@ -1,6 +1,6 @@
-const getBlankQuest = () => ({
+const getBlankQuest = currentCategory => ({
   subject: '',
-  category: '',
+  category: currentCategory,
   question: '',
   choice_0: '',
   choice_1: '',
