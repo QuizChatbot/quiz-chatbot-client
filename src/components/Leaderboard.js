@@ -15,7 +15,7 @@ margin: auto;
 class Leaderboard extends Component {
   render () {
     const { developers, currentCategory, setCategory } = this.props
-    const categories = ['12 Factors App', 'Design Patterns']
+    const categories = ['12 Factors App', 'Design Patterns', 'Rules of Thumb']
     return (
       <div style={{ textAlign: 'center', margin: 'auto' }}>
         <h2>Leaderboard</h2>

@@ -117,6 +117,13 @@ class QuizInput extends Component {
                   uncheckedIcon={<ActionFavoriteBorder />}
                   style={{ marginTop: '5px', marginBottom: '5px' }}
                 />
+                <RadioButton
+                  value='rules of thumb'
+                  label='rules of thumb'
+                  checkedIcon={<ActionFavorite style={{ color: '#F44336' }} />}
+                  uncheckedIcon={<ActionFavoriteBorder />}
+                  style={{ marginTop: '5px', marginBottom: '5px' }}
+                />
               </RadioButtonGroup>
             </div>
           </div>
