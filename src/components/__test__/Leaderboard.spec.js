@@ -21,7 +21,7 @@ describe('Leaderboard component', () => {
 
   it('should render button for choose category', () => {
     const Wrapper = shallow(<Leaderboard {...props} />)
-    expect(Wrapper.find('CategoryButton')).toHaveLength(2)
+    expect(Wrapper.find('CategoryButton')).toHaveLength(3)
   })
 
   it('should render LeaderboardItem component', () => {
