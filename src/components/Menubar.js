@@ -87,11 +87,11 @@ export class Menubar extends Component {
               style={{ verticalAlign: 'bottom' }}
             />
             <FlatButton
+              containerElement={<Link to='/play' />}
               label='PLAY QUIZ'
-              rippleColor='cyan'
+              rippleColor='black'
               onTouchTap={unshowMenu}
-              href='https://www.facebook.com/messages/t/122419575009686'
-              target='_blank'
+              style={{ verticalAlign: 'bottom' }}
             />
             <FlatButton
               containerElement={<Link to='/myquiz' />}
@@ -134,3 +134,12 @@ Menubar.PropTypes = {
 }
 
 export default Menubar
+
+// old paly quiz button
+// <FlatButton
+//   label='PLAY QUIZ'
+//   rippleColor='cyan'
+//   onTouchTap={unshowMenu}
+//   href='https://www.facebook.com/messages/t/122419575009686'
+//   target='_blank'
+// />

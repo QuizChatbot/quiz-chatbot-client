@@ -6,6 +6,7 @@ import Leaderboard from './Leaderboard.container'
 import Menubar from './Menubar.container'
 import Footer from '../components/Footer'
 import MyQuiz from './MyQuiz.container'
+import PlayQuiz from '../components/PlayQuiz'
 import Page404 from './404.container'
 import * as QuizActions from '../actions'
 
@@ -79,6 +80,7 @@ class App extends Component {
                 path='/'
                 component={props => <Leaderboard {...props} />}
               />
+              <Route exact path='/play' component={props => <PlayQuiz />} />
               <PrivateRoute
                 authed={this.props.authed}
                 path='/myquiz'
