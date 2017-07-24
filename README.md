@@ -1,3 +1,13 @@
+# About this project
+This repository is client-side of Quiz Chatbot project and is hosting at https://quizchatbot-ce222.firebaseapp.com by Google Firebase.
+Quiz chatbot is facebook messenger bot for testing your knowledge.
+Now have 3 categories of quiz
+- `12 Factors App`: a methodology for building software-as-a-service apps.
+- `Design Patterns`: a general repeatable solution to a commonly occurring problem in software design.
+- `Rule of Thumb`: a general rule or quick estimate about relation between each design pattern.
+
+===============================================================================
+
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
 Below you will find some information on how to perform common tasks.<br>
