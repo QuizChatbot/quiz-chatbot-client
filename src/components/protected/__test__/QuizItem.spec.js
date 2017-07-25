@@ -11,11 +11,7 @@ describe('QuizItem component', () => {
     const Wrapper = shallow(
       <QuizItem idx={0} quest={quest} editQuiz={func} deleteQuiz={func} />
     )
-    expect(
-      Wrapper.contains(
-        <Element idx={0} quest={quest} editQuiz={func} deleteQuiz={func} />
-      )
-    ).toEqual(true)
+    expect(Wrapper).toMatchSnapshot()
   })
 
   it('Element component should render QuizInput component and delete button', () => {
