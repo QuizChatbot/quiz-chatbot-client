@@ -6,6 +6,8 @@ Now have 3 categories of quiz
 - `Design Patterns`: a general repeatable solution to a commonly occurring problem in software design.
 - `Rule of Thumb`: a general rule or quick estimate about relation between each design pattern.
 
+There are 20 of each category and will be ramdomed 10 as a set for 1 round.
+
 ===============================================================================
 
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
