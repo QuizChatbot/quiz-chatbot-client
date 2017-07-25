@@ -56,7 +56,7 @@ export const Element = ({
         title='Comfirm delete?'
         actions={actions}
         modal={false}
-        open={isDialogOpen}
+        open={isDialogOpen || false}
         onRequestClose={() => handleClose()}
       >
         This quiz will be permanently deleted and can not undo.
