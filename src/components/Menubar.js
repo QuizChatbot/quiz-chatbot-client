@@ -85,19 +85,28 @@ export class Menubar extends Component {
             onRequestChange={isShowDrawer => this.setState({ isShowDrawer })}
           >
             <MenuItem
+              disabled
+              style={{ background: 'darkcyan', color: 'whitesmoke' }}
+            >
+              <b>QUIZ CHATBOT</b>
+            </MenuItem>
+            <MenuItem
               onTouchTap={this.handleClose}
+              style={{ textAlign: 'left' }}
               containerElement={<Link to='/' />}
             >
               LEADERBOARD
             </MenuItem>
             <MenuItem
               onTouchTap={this.handleClose}
+              style={{ textAlign: 'left' }}
               containerElement={<Link to='/play' />}
             >
               PLAY QUIZ
             </MenuItem>
             <MenuItem
               onTouchTap={this.handleClose}
+              style={{ textAlign: 'left' }}
               containerElement={<Link to='/myquiz' />}
             >
               MY QUIZ
