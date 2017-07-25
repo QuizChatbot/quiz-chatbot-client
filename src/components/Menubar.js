@@ -8,6 +8,8 @@ import Paper from 'material-ui/Paper'
 import Avatar from 'material-ui/Avatar'
 import IconButton from 'material-ui/IconButton'
 import NevigationMenu from 'material-ui/svg-icons/navigation/menu'
+import Drawer from 'material-ui/Drawer'
+import MenuItem from 'material-ui/MenuItem'
 
 const PaperMenu = styled(Paper)`
   width:100%;
@@ -57,22 +59,56 @@ export class Menubar extends Component {
   constructor (props) {
     super(props)
     this.state = {
-      isShowMenu: false
+      isShowMenu: false,
+      isShowDrawer: false
     }
   }
+
+  handleToggle = () => this.setState({ isShowDrawer: !this.state.open })
+
+  handleClose = () => this.setState({ isShowDrawer: false })
+
   render () {
     const { firedux, authed, onLoginClick, onLogoutClick } = this.props
-    const unshowMenu = () =>
-      setTimeout(() => {
-        this.setState({ isShowMenu: false })
-      }, 300)
+    // const unshowMenu = () =>
+    //   setTimeout(() => {
+    //     this.setState({ isShowMenu: false })
+    //   }, 300)
 
     return (
       <div style={{ textAlign: 'center' }}>
+        <div>
+          <Drawer
+            docked={false}
+            width={200}
+            open={this.state.isShowDrawer}
+            onRequestChange={isShowDrawer => this.setState({ isShowDrawer })}
+          >
+            <MenuItem
+              onTouchTap={this.handleClose}
+              containerElement={<Link to='/' />}
+            >
+              LEADERBOARD
+            </MenuItem>
+            <MenuItem
+              onTouchTap={this.handleClose}
+              containerElement={<Link to='/play' />}
+            >
+              PLAY QUIZ
+            </MenuItem>
+            <MenuItem
+              onTouchTap={this.handleClose}
+              containerElement={<Link to='/myquiz' />}
+            >
+              MY QUIZ
+            </MenuItem>
+          </Drawer>
+        </div>
         <PaperMenu zDepth={1} rounded={false}>
           <Hamberger
             onClick={() =>
-              this.setState({ isShowMenu: !this.state.isShowMenu })}
+              // this.setState({ isShowMenu: !this.state.isShowMenu })}
+              this.handleToggle()}
           >
             <IconButton>
               <NevigationMenu />
@@ -83,14 +119,14 @@ export class Menubar extends Component {
               containerElement={<Link to='/' />}
               label='LEADERBOARD'
               rippleColor='black'
-              onTouchTap={unshowMenu}
+              // onTouchTap={unshowMenu}
               style={{ verticalAlign: 'bottom' }}
             />
             <FlatButton
               containerElement={<Link to='/play' />}
               label='PLAY QUIZ'
               rippleColor='black'
-              onTouchTap={unshowMenu}
+              // onTouchTap={unshowMenu}
               style={{ verticalAlign: 'bottom' }}
             />
             <FlatButton
@@ -98,7 +134,7 @@ export class Menubar extends Component {
               label='MY QUIZ'
               rippleColor='black'
               disabled={!authed}
-              onTouchTap={unshowMenu}
+              // onTouchTap={unshowMenu}
               style={{ verticalAlign: 'bottom' }}
             />
           </MenuContainer>
