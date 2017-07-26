@@ -79,7 +79,8 @@ class PlayQuiz extends Component {
               rippleColor='#FF5722'
               backgroundColor='#FF9800'
               hoverColor='#EF6C00'
-              href='https://www.facebook.com/messages/t/122419575009686'
+              // href='https://www.facebook.com/messages/t/122419575009686'
+              href='https://m.me/122419575009686'
               target='_blank'
               style={{ marginBottom: '3px' }}
             />
