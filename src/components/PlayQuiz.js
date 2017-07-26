@@ -72,16 +72,17 @@ class PlayQuiz extends Component {
       case 0:
         return (
           <div style={{ maxWidth: '640px', width: '100%', margin: 'auto' }}>
-            Click this {' '}
+            Please say something to me...
+            <br />
             <FlatButton
-              label='🤖 Quiz Chatbot'
-              rippleColor='cyan'
+              label='🤖 PLAY 🤖'
+              rippleColor='#FF5722'
+              backgroundColor='#FF9800'
+              hoverColor='#EF6C00'
               href='https://www.facebook.com/messages/t/122419575009686'
               target='_blank'
               style={{ marginBottom: '3px' }}
             />
-            <br />
-            And say something to me...
           </div>
         )
       case 1:
