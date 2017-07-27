@@ -25,9 +25,7 @@ export function deleteQuiz (id) {
 
 export function editQuiz (id, quiz, isChoice) {
   return () => {
-    isChoice
-      ? firedux.update(`Quests/${id}/choices`, quiz)
-      : firedux.update(`Quests/${id}`, quiz)
+    isChoice ? firedux.update(`Quests/${id}/choices`, quiz) : firedux.update(`Quests/${id}`, quiz)
     firedux.update(`Quests/${id}`, {
       updatedAt: Date()
     })
@@ -116,7 +114,7 @@ function getDevelopers (data) {
 function setDeveloperData (developers, developer) {
   if (developer.summary) {
     let arraySummary = developer.summary
-    let categories = ['12 factors app', 'design patterns']
+    let categories = ['12 factors app', 'design patterns', 'rules of thumb']
     var summary = {}
     var maxSummary = {}
     for (let category in categories) {
@@ -142,12 +140,14 @@ function setDeveloperData (developers, developer) {
     if (Object.keys(maxSummary).length) {
       const cat0 = _.snakeCase(categories[0])
       const cat1 = _.snakeCase(categories[1])
+      const cat2 = _.snakeCase(categories[2])
 
       developers.push({
         id: developer.id,
         profile: developer.profile,
         [cat0]: maxSummary[cat0],
-        [cat1]: maxSummary[cat1]
+        [cat1]: maxSummary[cat1],
+        [cat2]: maxSummary[cat2]
       })
     }
   }

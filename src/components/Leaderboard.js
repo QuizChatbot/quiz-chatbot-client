@@ -15,33 +15,14 @@ margin: auto;
 class Leaderboard extends Component {
   render () {
     const { developers, currentCategory, setCategory } = this.props
-    const categories = ['12 Factors App', 'Design Patterns', 'Rules of Thumb']
+    const categories = ['12 Factors App', 'Design Patterns', 'Rules Of Thumb']
     return (
       <div style={{ textAlign: 'center', margin: 'auto' }}>
         <h2>Leaderboard</h2>
-        {categories.map((category, idx) => (
-          <CategoryButton
-            key={idx}
-            category={category}
-            categoryLabel={_.snakeCase(category)}
-            labelColor={
-              currentCategory === _.snakeCase(category) ? 'orange' : 'black'
-            }
-            setCategory={setCategory}
-          />
-        ))}
+        {categories.map((category, idx) => <CategoryButton key={idx} category={category} categoryLabel={_.snakeCase(category)} labelColor={currentCategory === _.snakeCase(category) ? 'orange' : 'black'} setCategory={setCategory} />)}
 
         <ListContainer>
-          {!developers.length
-            ? <div style={{ textAlign: 'center' }}>No Players</div>
-            : developers.map((developer, idx) => (
-              <LeaderboardItem
-                key={idx}
-                idx={idx}
-                developer={developer}
-                category={currentCategory}
-                />
-              ))}
+          {!developers.length ? <div style={{ textAlign: 'center' }}>No Players</div> : developers.map((developer, idx) => <LeaderboardItem key={idx} idx={idx} developer={developer} category={currentCategory} />)}
         </ListContainer>
       </div>
     )
